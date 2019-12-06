@@ -116,6 +116,11 @@ char	*mesg[]DQ{
 	"Sig 19",
 };
 
+#include <unistd.h>
+#include <stdio.h>
+#include <stdlib.h>
+
+
 struct stime {
 	int proct[2];
 	int cputim[2];
@@ -126,20 +131,20 @@ char	line[LINSIZ];
 char	*args[ARGSIZ];
 int	trebuf[TRESIZ];
 
-main(c, av)
-int c;
-char **av;
+int main(int argc,char * argv[])
 {
-	register f;
-	register char *acname, **v;
+	/*register*/ int f;
+	/*register*/ char *acname, **v;
 
 	for(f=2; f<15; f++)
 		close(f);
 	if((f=dup(1)) != 2)
 		close(f);
 	dolc = getpid();
+	long (*ldivp)(long a,long b,long c) = (long (*)(long,long,long))ldiv;
 	for(f=4; f>=0; f--) {
-		dolc = ldiv(0, dolc, 10);
+		//dolc = ldiv(0, dolc, 10);
+		dolc = ldivp(0, dolc, 10);
 		pidp[f] = ldivr+'0';
 	}
 	v = av;

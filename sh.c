@@ -92,8 +92,8 @@ char	uid;
 char	setintr;
 char	*arginp;
 int	onelflg;
-
-char	*mesg[] {
+#define  DQ =
+char	*mesg[]DQ{
 	0,
 	"Hangup",
 	0,

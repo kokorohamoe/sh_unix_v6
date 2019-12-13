@@ -2,6 +2,7 @@
 #include <sys/stat.h>
 #include <string.h>
 #include <stdlib.h>
+#include <unistd.h>
 
 const char const * path[] = {
     "/usr/bin/",
@@ -31,7 +32,7 @@ int main (int argc,char *argv[])
   strcpy(prompot," >");
 
   while(!0){
-
+    sleep(1);
     printf(prompot);
 
     for(int i=0;i<2;i++){

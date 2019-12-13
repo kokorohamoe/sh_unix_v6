@@ -21,11 +21,17 @@ int isPathExist(const char *path){
 char buffer[BUFFERSIZE];
 
 
-
+char prompot[BUFFERSIZE];
 
 int main (int argc,char *argv[])
 {
-    int ret = 0;
+  int ret = 0;
+  printf("L\r\nL\r\n");
+  strcpy(prompot," >");
+
+  while(!0){
+
+    printf(prompot);
 
     for(int i=0;i<2;i++){
         strcpy(buffer,path[i]);
@@ -38,6 +44,8 @@ int main (int argc,char *argv[])
 	   break;
 	}
     }
+
+  }
 
 
 //for(int i=0;i<argc;++i){

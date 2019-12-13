@@ -32,7 +32,6 @@ int main (int argc,char *argv[])
   strcpy(prompot," >");
 
   while(!0){
-    sleep(1);
     printf(prompot);
 
     for(int i=0;i<2;i++){
@@ -41,6 +40,7 @@ int main (int argc,char *argv[])
 	int len = strlen(buffer);
 	strcpy(buffer+len,linebuffer);
 	 printf("%s\n",buffer);
+	 sleep(1)
 	if ( isPathExist ( buffer ) ){
 	   printf("found %s\n",buffer);
 	   system(buffer);

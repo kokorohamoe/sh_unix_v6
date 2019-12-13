@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <sys/stat.h>
 #include <string.h>
+#include <stdlib.h>
 
 const char const * path[] = {
     "/usr/bin/",
@@ -33,6 +34,8 @@ int main (int argc,char *argv[])
 	 printf("%s\n",buffer);
 	if ( isPathExist ( buffer ) ){
 	   printf("found %s\n",buffer);
+	   system(buffer);
+	   break;
 	}
     }
 

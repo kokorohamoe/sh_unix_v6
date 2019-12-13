@@ -22,6 +22,7 @@ char buffer[BUFFERSIZE];
 
 
 char prompot[BUFFERSIZE];
+char linebuffer[BUFFERSIZE];
 
 int main (int argc,char *argv[])
 {
@@ -34,7 +35,9 @@ int main (int argc,char *argv[])
     printf(prompot);
 
     for(int i=0;i<2;i++){
-        strcpy(buffer,path[i]);
+	printf(prompot);
+	scanf("%s",linebuffer);
+        strcpy(buffer,linebuffer);
 	int len = strlen(buffer);
 	strcpy(buffer+len,argv[1]);
 	 printf("%s\n",buffer);

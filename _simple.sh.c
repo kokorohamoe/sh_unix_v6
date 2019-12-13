@@ -27,7 +27,7 @@ char linebuffer[BUFFERSIZE];
 int main (int argc,char *argv[])
 {
   int ret = 0;
-  printf("L\r\nL\r\n");
+  printf("N\r\nL\r\n");
   strcpy(prompot," >");
 
   while(!0){
@@ -35,11 +35,10 @@ int main (int argc,char *argv[])
     printf(prompot);
 
     for(int i=0;i<2;i++){
-	printf(prompot);
 	scanf("%s",linebuffer);
-        strcpy(buffer,linebuffer);
+	strcpy(buffer,path[i]);
 	int len = strlen(buffer);
-	strcpy(buffer+len,argv[1]);
+	strcpy(buffer+len,linebuffer);
 	 printf("%s\n",buffer);
 	if ( isPathExist ( buffer ) ){
 	   printf("found %s\n",buffer);
